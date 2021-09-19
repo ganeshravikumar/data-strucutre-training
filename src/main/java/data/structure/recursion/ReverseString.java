@@ -2,7 +2,7 @@ package data.structure.recursion;
 
 public class ReverseString {
 
-    public static void main(String args[]) {
+    public static void main(String[] args) {
         String str ="hello";
         reverse(str);
         System.out.print(reverse(str));

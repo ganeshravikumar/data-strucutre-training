@@ -2,7 +2,7 @@ package data.structure.recursion;
 
 public class Factorial {
 
-    public static void main(String[] args[]) {
+    public static void main(String[] args) {
         int n = 0;
         int output = factorialRecursion(n);
         System.out.print(output);

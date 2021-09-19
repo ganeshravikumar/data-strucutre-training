@@ -2,7 +2,7 @@ package data.structure.recursion;
 
 public class SumOfDigitsOfNumbers {
 
-    public static void main(String args[]) {
+    public static void main(String[] args) {
         int n=5551231;
         int output= sumOfDigits(n);
         System.out.print(output);

@@ -2,7 +2,7 @@ package data.structure.recursion;
 
 public class Palindrom {
 
-    public static void main(String args[]) {
+    public static void main(String[] args) {
         String str = "maddam";
 
         boolean result = palindrom(str);
@@ -13,10 +13,7 @@ public class Palindrom {
         System.out.println(str);
 
             if (str.length() <=2) {
-                if (str.charAt(0) == str.charAt(str.length() - 1)) {
-                    return true;
-                }
-                return false;
+                return str.charAt(0) == str.charAt(str.length() - 1);
             }
           return  palindrom(str.substring(1, str.length() - 1));
 

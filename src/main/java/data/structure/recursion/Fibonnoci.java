@@ -2,7 +2,7 @@ package data.structure.recursion;
 
 public class Fibonnoci {
 
-    public static void main(String args[]) {
+    public static void main(String[] args) {
         int n=4;
         int output = fibonnociRecursion(n);
         System.out.print(output);
