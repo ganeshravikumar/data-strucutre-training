@@ -15,5 +15,12 @@ public class TestCirculareLinkedList {
         CLSS.traverse();
         CLSS.deletionOfNode(2);
         CLSS.traverse();
+        CLSS.insert(5,2);
+        CLSS.traverse();
+        CLSS.insert(0,0);
+        CLSS.traverse();
+        System.out.println(CLSS.size);
+        CLSS.insert(6,6);
+        CLSS.traverse();
     }
 }
