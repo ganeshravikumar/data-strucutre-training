@@ -1,6 +1,8 @@
 package data.structure.linkedlist;
 
 
+import java.util.HashSet;
+
 public class SingleLinkedList {
     public Node head;
     public Node tail;
@@ -31,15 +33,19 @@ public class SingleLinkedList {
         Node newNode = new Node();
         newNode.nodeValue = nodeValue;
         newNode.nextReference = null;
-        for (int i = 0; i < size; i++) {
-            if (referenceNode.nextReference == null) {
-                referenceNode.nextReference = newNode;
-                tail = newNode;
+        if(head==null){
+            return createSingleLinkedList(nodeValue);
+        }else {
+            for (int i = 0; i < size; i++) {
+                if (referenceNode.nextReference == null) {
+                    referenceNode.nextReference = newNode;
+                    tail = newNode;
+                }
+                referenceNode = referenceNode.nextReference;
             }
-            referenceNode = referenceNode.nextReference;
+            size++;
+            return head;
         }
-        size++;
-        return head;
     }
 
     /**
@@ -124,6 +130,42 @@ public class SingleLinkedList {
         tempNode.nextReference=deletNode.nextReference;
         deletNode.nextReference=null;
         size--;
+    }
+
+    public void deleteDuplicate(){
+        HashSet<Integer> hs = new HashSet<>();
+        Node current =head;
+        Node prev= null;
+        while (current!= null){
+            if(hs.contains(current.nodeValue)){
+                prev.nextReference=current.nextReference;
+                size--;
+            }
+            else{
+                hs.add(current.nodeValue);
+                prev=current;
+            }
+            current= current.nextReference;
+
+        }
+
+     /*   Node node ;
+        node=head;
+        Node compareNode ;
+
+       for (int i = 1; i < size; i++) {
+            compareNode=node.nextReference;
+            for (int j = i; j < size; j++) {
+                if(compareNode.nodeValue==node.nodeValue){
+                    DeleteInLinkedList(j);
+                    compareNode=node.nextReference;
+                }
+                compareNode=compareNode.nextReference;
+            }
+            node=node.nextReference;
+
+
+        }*/
     }
 
 }
